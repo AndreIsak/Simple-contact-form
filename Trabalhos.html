@@ -1,0 +1,72 @@
+<html>
+<meta charset="utf-8">
+<head>
+	<script>
+  function validar() {
+   var nome = document.forms["form1"]["nome"].value;
+   if(nome.length == 0) {
+    alert("Nome obrigatorio");
+    return false;
+   }
+   var morada = document.forms["form1"]["morada"].value;
+   if(morada.length == 0) {
+    alert("Morada obrigatoria");
+    return false;
+   }
+   var email = document.forms["form1"]["email"].value;
+   if(email.length == 0) {
+    alert("Email obrigatorio");
+    return false;
+   }
+   return true;
+  }
+ </script>
+</head>
+
+<body bgcolor="#f2f2f2">
+<center>
+<fieldset>
+ <legend><b>FORMULÁRIO</b></legend>
+<table border=1 cellspacing=0 cellpadding=15 bordercolor="darkgray" bgcolor="#e6e6e6">  
+
+<tr><td>
+<Form NAME="form1" action="php.php" method="post" onsubmit="return validar()">
+		 Nome: <br> <input style="width:250px;" type="text" name="nome" value=""/> <br><br>
+		 Morada: <br> <input style="width:250px;" type="text" name="morada" value=""/> <br><br>
+		 Email: <br> <input style="width:250px;" type="text" name="email" value=""/> <br><br>
+		 
+         Genero:<br> <center> <input type="radio" name="genero" value="M" checked /> M
+							<input type="radio" name="genero" value="F"/> F  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </center>
+<br>
+		 Habilitações:<br><select name="hab">
+			<option value="Doutoramento"> Doutoramento </option>
+			<option value="Mestrado"> Mestrado </option>
+			<option value="Licenciatura"> Licenciatura </option>
+			<option value="Curso Profissional"> Curso Profissional </option>
+			<option value="12º Ano"> 12º Ano </option>
+		</select>
+<br><br>
+		 Linguagens:<br> <center>	<input type="checkbox" name="ling[]" value=" C" />C
+					<input type="checkbox" name="ling[]" value=" Java" />Java
+					<input type="checkbox" name="ling[]" value=" Java Script" />Java Script </center>
+<br>	
+				
+		 Observações:
+<br>
+					<textarea name="obs" rows="5" cols="40" ></textarea>
+</td></tr>
+	</table> 
+</fieldset>
+		<select name="linguas">
+			<option value="pt"> Portugues </option>
+			<option value="fr"> Frances </option>
+			<option value="ing"> Ingles </option>
+		</select>
+
+	<input type="submit" value="Enviar"/>
+	<input type="reset" value="Apagar"/>
+
+</center>			
+</body>
+
+</html>
